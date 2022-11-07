@@ -5,8 +5,9 @@ export interface Video {
 }
 
 export interface PlayLists {
-  games: Video[];
-  frontend: Video[];
+  jogos: Video[];
+  'front-end': Video[];
+  'back-end': Video[];
 }
 
 export interface AppConfig {

@@ -1,6 +1,6 @@
-import styled from 'styled-components';
 import appConfig from '../../config.json';
-import { AppConfig } from '../@types/AppConfig';
+import styled from 'styled-components';
+import { AppConfig, PlayLists } from '../@types/AppConfig';
 
 const config = appConfig as AppConfig;
 
@@ -11,7 +11,7 @@ function HomePage() {
     <div style={homePageStyles}>
       <Menu />
       <Header />
-      <TimeLine />
+      <TimeLine playlists={config.playlists} />
     </div>
   );
 }
@@ -60,10 +60,33 @@ function Header() {
   );
 }
 
-function TimeLine() {
+interface TimeLineProps {
+  playlists: PlayLists;
+}
+
+function TimeLine(props: TimeLineProps) {
+  const playlistsNames = Object.keys(props.playlists);
   return (
     <div>
-      <p>TimeLine</p>
+      {playlistsNames.map((playlistsName) => {
+        const videos = props.playlists[playlistsName];
+        return (
+          <section>
+            <h2>{playlistsName}</h2>
+
+            <div>
+              {videos.map((video, index) => {
+                return (
+                  <a key={index} href={video.url}>
+                    <img src={video.thumb} />
+                    <p>{video.title}</p>
+                  </a>
+                );
+              })}
+            </div>
+          </section>
+        );
+      })}
     </div>
   );
 }

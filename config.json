@@ -3,7 +3,7 @@
   "job": "Full Stack Software Developer",
   "github": "rodolfoHOk",
   "playlists": {
-    "games": [
+    "jogos": [
       {
         "title": "título jogo 1",
         "url": "url",
@@ -15,9 +15,16 @@
         "thumb": "thumbnail do video"
       }
     ],
-    "frontend": [
+    "front-end": [
       {
         "title": "título front 1",
+        "url": "url",
+        "thumb": "thumbnail do video"
+      }
+    ],
+    "back-end": [
+      {
+        "title": "título back 1",
         "url": "url",
         "thumb": "thumbnail do video"
       }
