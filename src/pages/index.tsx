@@ -1,5 +1,7 @@
 function HomePage() {
-  return <div>Bem vindo ao Alura Tube!</div>;
+  const message = 'Bem vindo ao Alura Tube!';
+  const homePageStyles = { backgroundColor: 'red' };
+  return <div style={homePageStyles}>{message}</div>;
 }
 
 export default HomePage;
