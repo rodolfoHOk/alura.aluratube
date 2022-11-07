@@ -26,7 +26,7 @@ function Menu() {
 function Header() {
   return (
     <div>
-      <img src="" alt="header banner" />
+      {/* <img src="" alt="header banner" /> */}
       <img
         src={`https://github.com/${config.github}.png`}
         alt="foto do perfil"
