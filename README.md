@@ -17,4 +17,6 @@
 
 - Adicionei Typescript
 
-30:21
+## Commandos
+
+- criar git ignore: npx gitignore node
