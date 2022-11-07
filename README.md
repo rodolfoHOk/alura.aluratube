@@ -7,6 +7,7 @@
 - Javascript / Typescript
 - Next Js
 - React Js
+- Styled Components
 
 ### Bibliotecas adicionais
 
