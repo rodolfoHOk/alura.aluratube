@@ -1,11 +1,14 @@
-import config from '../../config.json';
+import styled from 'styled-components';
+import appConfig from '../../config.json';
+import { AppConfig } from '../@types/AppConfig';
+
+const config = appConfig as AppConfig;
 
 function HomePage() {
-  const message = 'Bem vindo ao Alura Tube!';
   const homePageStyles = { backgroundColor: 'red' };
+
   return (
     <div style={homePageStyles}>
-      <h2>{message}</h2>
       <Menu />
       <Header />
       <TimeLine />
@@ -23,17 +26,37 @@ function Menu() {
   );
 }
 
+const StyledHeader = styled.div`
+  .user-info {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 16px, 32px;
+    gap: 16px;
+
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+  }
+`;
+
 function Header() {
   return (
-    <div>
+    <StyledHeader>
       {/* <img src="" alt="header banner" /> */}
-      <img
-        src={`https://github.com/${config.github}.png`}
-        alt="foto do perfil"
-      />
-      <span>{config.name}</span>
-      <span>{config.job}</span>
-    </div>
+      <section className="user-info">
+        <img
+          src={`https://github.com/${config.github}.png`}
+          alt="foto do perfil"
+        />
+        <div>
+          <h2>{config.name}</h2>
+          <p>{config.job}</p>
+        </div>
+      </section>
+    </StyledHeader>
   );
 }
 

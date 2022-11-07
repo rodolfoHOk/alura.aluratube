@@ -1,5 +1,26 @@
 {
   "name": "Rodolfo HiOk",
   "job": "Full Stack Software Developer",
-  "github": "rodolfoHOk"
+  "github": "rodolfoHOk",
+  "playlists": {
+    "games": [
+      {
+        "title": "título jogo 1",
+        "url": "url",
+        "thumb": "thumbnail do video"
+      },
+      {
+        "title": "título jogo 2",
+        "url": "url",
+        "thumb": "thumbnail do video"
+      }
+    ],
+    "frontend": [
+      {
+        "title": "título front 1",
+        "url": "url",
+        "thumb": "thumbnail do video"
+      }
+    ]
+  }
 }
