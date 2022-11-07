@@ -1,33 +1,36 @@
-import appConfig from '../../config.json';
 import styled from 'styled-components';
+import appConfig from '../../config.json';
 import { AppConfig, PlayLists } from '../@types/AppConfig';
+import { CSSReset } from '../components/CSSReset';
+import { Menu } from '../components/Menu';
+import { StyledTimeline } from '../components/TimeLine';
 
 const config = appConfig as AppConfig;
 
-function HomePage() {
-  const homePageStyles = { backgroundColor: 'red' };
+const StyledHomePage = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+`;
 
+function HomePage() {
   return (
-    <div style={homePageStyles}>
-      <Menu />
-      <Header />
-      <TimeLine playlists={config.playlists} />
-    </div>
+    <>
+      <CSSReset />
+      <StyledHomePage>
+        <Menu />
+        <Header />
+        <TimeLine playlists={config.playlists} />
+      </StyledHomePage>
+    </>
   );
 }
 
 export default HomePage;
 
-function Menu() {
-  return (
-    <div>
-      <p>Menu</p>
-    </div>
-  );
-}
-
 const StyledHeader = styled.div`
   .user-info {
+    margin-top: 64px;
     display: flex;
     align-items: center;
     width: 100%;
@@ -67,7 +70,7 @@ interface TimeLineProps {
 function TimeLine(props: TimeLineProps) {
   const playlistsNames = Object.keys(props.playlists);
   return (
-    <div>
+    <StyledTimeline>
       {playlistsNames.map((playlistsName) => {
         const videos = props.playlists[playlistsName];
         return (
@@ -87,6 +90,6 @@ function TimeLine(props: TimeLineProps) {
           </section>
         );
       })}
-    </div>
+    </StyledTimeline>
   );
 }
