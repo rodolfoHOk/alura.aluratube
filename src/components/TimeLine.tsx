@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { PlayLists } from '../@types/AppConfig';
 
-export const StyledTimeline = styled.div`
+const StyledTimeline = styled.div`
   flex: 1;
   width: 100%;
   padding: 16px;
@@ -44,3 +45,34 @@ export const StyledTimeline = styled.div`
     }
   }
 `;
+
+interface TimeLineProps {
+  playlists: PlayLists;
+}
+
+export function TimeLine(props: TimeLineProps) {
+  const playlistsNames = Object.keys(props.playlists);
+  return (
+    <StyledTimeline>
+      {playlistsNames.map((playlistsName) => {
+        const videos = props.playlists[playlistsName];
+        return (
+          <section>
+            <h2>{playlistsName}</h2>
+
+            <div>
+              {videos.map((video, index) => {
+                return (
+                  <a key={index} href={video.url}>
+                    <img src={video.thumb} />
+                    <p>{video.title}</p>
+                  </a>
+                );
+              })}
+            </div>
+          </section>
+        );
+      })}
+    </StyledTimeline>
+  );
+}
