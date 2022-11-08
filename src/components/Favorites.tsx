@@ -36,12 +36,6 @@ const StyledFavorites = styled.div`
     a {
       font-size: 14px;
       text-decoration: none;
-      color: black;
-
-      :hover {
-        opacity: unset;
-        color: black;
-      }
     }
   }
 `;
