@@ -27,7 +27,7 @@ interface HeaderProps {
 export function Header({ config }: HeaderProps) {
   return (
     <StyledHeader>
-      <Banner url="assets/banner-image.jpg" />
+      <Banner url={config.banner} />
       <section className="user-info">
         <img
           src={`https://github.com/${config.github}.png`}

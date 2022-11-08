@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Search } from './Search';
 
 const StyledMenu = styled.header`
   display: flex;
@@ -24,12 +25,18 @@ const StyledMenu = styled.header`
   }
 `;
 
-export function Menu() {
+interface MenuProps {
+  filterValue: string;
+  setFilterValue: (value: string) => void;
+}
+
+export function Menu({ filterValue, setFilterValue }: MenuProps) {
   return (
     <StyledMenu>
       <div>
         <Logo />
       </div>
+      <Search filterValue={filterValue} setFilterValue={setFilterValue} />
     </StyledMenu>
   );
 }

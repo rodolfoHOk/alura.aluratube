@@ -48,27 +48,32 @@ const StyledTimeline = styled.div`
 
 interface TimeLineProps {
   playlists: PlayLists;
+  filterValue: string;
 }
 
-export function TimeLine(props: TimeLineProps) {
-  const playlistsNames = Object.keys(props.playlists);
+export function TimeLine({ playlists, filterValue }: TimeLineProps) {
+  const playlistsNames = Object.keys(playlists);
   return (
     <StyledTimeline>
-      {playlistsNames.map((playlistsName) => {
-        const videos = props.playlists[playlistsName];
+      {playlistsNames.map((playlistsName, index) => {
+        const videos = playlists[playlistsName];
         return (
-          <section>
+          <section key={index}>
             <h2>{playlistsName}</h2>
 
             <div>
-              {videos.map((video, index) => {
-                return (
-                  <a key={index} href={video.url}>
-                    <img src={video.thumb} />
-                    <p>{video.title}</p>
-                  </a>
-                );
-              })}
+              {videos
+                .filter((video) =>
+                  video.title.toLowerCase().includes(filterValue.toLowerCase())
+                )
+                .map((video, index) => {
+                  return (
+                    <a key={index} href={video.url}>
+                      <img src={video.thumb} />
+                      <p>{video.title}</p>
+                    </a>
+                  );
+                })}
             </div>
           </section>
         );

@@ -1,23 +1,23 @@
-## Alura Tube
+## 📽️ Alura Tube 🍿
 
-> Imersão React da Alura (2022-11-07 - 2022-11-11)
+> Imersão React 5 da Alura
 
-## Principais tecnologias
+## 👨‍💻 Principais Tecnologias 👩‍💻
 
 - Javascript / Typescript
 - Next Js
 - React Js
 - Styled Components
 
-### Bibliotecas adicionais
+### 📚 Bibliotecas adicionais 🗃️
 
 -
 
-## Criação automática do .gitignore
+## 📃 Guia 📖
 
-- npx gitignore node
+- Criação automática do .gitignore: npx gitignore node
 
-## Desafios:
+## ➕ Desafios ✨
 
 ### Aula 1
 
@@ -35,15 +35,21 @@
 
 ### Aula 5
 
-## O que fiz além
+## ➕ O que fiz além ✨
 
 - Adicionei Typescript
 - Separei componentes em arquivos
 
-## Links úteis
+## 🖼️ Imagens do projeto 👀
 
+-
+
+## 🔗 Links úteis ✨
+
+- https://www.figma.com/file/1acrju7CLwHkSh6e7xEk9h/Aluratube?node-id=0%3A1
 - https://unsplash.com/
+- https://techguide.sh/
 
-## Deploy url
+## 🔥 Deployed URL 🔗
 
 - https://alura-aluratube-rodolfohok.vercel.app/

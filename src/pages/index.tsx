@@ -5,6 +5,7 @@ import { CSSReset } from '../components/CSSReset';
 import { Menu } from '../components/Menu';
 import { Header } from '../components/Header';
 import { TimeLine } from '../components/TimeLine';
+import { useState } from 'react';
 
 const config = appConfig as AppConfig;
 
@@ -15,13 +16,15 @@ const StyledHomePage = styled.div`
 `;
 
 export default function HomePage() {
+  const [filterValue, setFilterValue] = useState('angular');
+
   return (
     <>
       <CSSReset />
       <StyledHomePage>
-        <Menu />
+        <Menu filterValue={filterValue} setFilterValue={setFilterValue} />
         <Header config={config} />
-        <TimeLine playlists={config.playlists} />
+        <TimeLine filterValue={filterValue} playlists={config.playlists} />
       </StyledHomePage>
     </>
   );

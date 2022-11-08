@@ -13,6 +13,7 @@ export interface PlayLists {
 export interface AppConfig {
   name: string;
   job: string;
+  banner: string;
   github: string;
   playlists: PlayLists;
 }
