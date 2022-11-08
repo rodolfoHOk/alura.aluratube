@@ -16,7 +16,7 @@ const StyledHomePage = styled.div`
 `;
 
 export default function HomePage() {
-  const [filterValue, setFilterValue] = useState('angular');
+  const [filterValue, setFilterValue] = useState('');
 
   return (
     <>
