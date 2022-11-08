@@ -131,5 +131,25 @@
         "thumb": "https://img.youtube.com/vi/0JWMVc1CqpA/hqdefault.jpg"
       }
     ]
-  }
+  },
+  "favorites": [
+    {
+      "username": "peas"
+    },
+    {
+      "username": "omariosouto"
+    },
+    {
+      "username": "JulianaAmoasei"
+    },
+    {
+      "username": "rafaballerini"
+    },
+    {
+      "username": "marcobrunodev"
+    },
+    {
+      "username": "juunegreiros"
+    }
+  ]
 }

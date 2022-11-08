@@ -6,6 +6,7 @@ import { Menu } from '../components/Menu';
 import { Header } from '../components/Header';
 import { TimeLine } from '../components/TimeLine';
 import { useState } from 'react';
+import { Favorites } from '../components/Favorites';
 
 const config = appConfig as AppConfig;
 
@@ -25,6 +26,7 @@ export default function HomePage() {
         <Menu filterValue={filterValue} setFilterValue={setFilterValue} />
         <Header config={config} />
         <TimeLine filterValue={filterValue} playlists={config.playlists} />
+        <Favorites favorites={config.favorites} />
       </StyledHomePage>
     </>
   );

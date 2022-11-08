@@ -23,7 +23,6 @@ const StyledTimeline = styled.div`
     width: 100%;
     padding: 0;
     overflow: hidden;
-    padding: 16px;
     div {
       width: calc(100vw - 16px * 4);
       display: grid;

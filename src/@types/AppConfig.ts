@@ -4,6 +4,10 @@ export interface Video {
   thumb: string;
 }
 
+export interface GithubPerson {
+  username: string;
+}
+
 export interface PlayLists {
   jogos: Video[];
   'front-end': Video[];
@@ -16,4 +20,5 @@ export interface AppConfig {
   banner: string;
   github: string;
   playlists: PlayLists;
+  favorites: GithubPerson[];
 }

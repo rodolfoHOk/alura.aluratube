@@ -8,8 +8,9 @@ const StyledHeader = styled.div`
   .user-info {
     display: flex;
     align-items: center;
-    width: 100%;
+    width: calc(100% - 32px);
     padding: 16px, 32px;
+    margin: 16px;
     gap: 16px;
 
     img {

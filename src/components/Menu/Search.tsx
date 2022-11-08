@@ -48,6 +48,7 @@ export function Search({ filterValue, setFilterValue }: SearchProps) {
         type="text"
         value={searchText}
         onChange={(event) => setSearchText(event.target.value)}
+        placeholder="Vídeo"
       />
       <button>🔍</button>
     </StyledSearch>
