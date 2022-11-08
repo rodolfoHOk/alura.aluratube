@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import appConfig from '../../config.json';
 import { AppConfig } from '../@types/AppConfig';
 import { CSSReset } from '../components/CSSReset';
-import { Header } from '../components/Header';
 import { Menu } from '../components/Menu';
+import { Header } from '../components/Header';
 import { TimeLine } from '../components/TimeLine';
 
 const config = appConfig as AppConfig;

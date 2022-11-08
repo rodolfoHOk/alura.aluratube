@@ -40,10 +40,10 @@
 - Adicionei Typescript
 - Separei componentes em arquivos
 
+## Links úteis
+
+- https://unsplash.com/
+
 ## Deploy url
 
 - https://alura-aluratube-rodolfohok.vercel.app/
-
-## Links
-
-- [Aula 1](https://www.alura.com.br/imersao-react/aula01-web-componentes-deploy?utm_source=ActiveCampaign&utm_medium=email&utm_content=%5BImers%C3%A3o+React%5D+Aula+01+liberada++%F0%9F%94%93&utm_campaign=%5BImers%C3%A3o+React%5D+%5B5a+ed+%5D+Libera%C3%A7%C3%A3o+aula+01&vgo_ee=9sAp4dOt0DjSVfvrAoV8GjpxdzkQNl9LgdxZ9pnzLRY%3D)

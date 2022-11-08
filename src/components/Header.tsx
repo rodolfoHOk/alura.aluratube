@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 import { AppConfig } from '../@types/AppConfig';
+import { Banner } from './Banner';
 
 const StyledHeader = styled.div`
+  margin-top: 64px;
+
   .user-info {
-    margin-top: 64px;
     display: flex;
     align-items: center;
     width: 100%;
@@ -25,7 +27,7 @@ interface HeaderProps {
 export function Header({ config }: HeaderProps) {
   return (
     <StyledHeader>
-      {/* <img src="" alt="header banner" /> */}
+      <Banner url="assets/banner-image.jpg" />
       <section className="user-info">
         <img
           src={`https://github.com/${config.github}.png`}
