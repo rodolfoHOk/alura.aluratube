@@ -1,21 +1,15 @@
 import styled from 'styled-components';
-import { Logo } from './Logo';
-import { Search } from './Search';
-import { ThemeSelector } from './ThemeSelector';
+import { DarkModeSwitch } from './components/DarkModeSwitch';
+import { Logo } from './components/Logo';
+import { Search } from './components/Search';
 
-const StyledMenu = styled.header<{ theme: 'light' | 'dark' }>`
+const StyledMenu = styled.header`
   display: flex;
   flex-direction: row;
   height: 56px;
   justify-content: space-between;
-
-  /* background-color: ${({ theme }) => theme.backgroundLevel1 || '#FFFFFF'}; */
-  /* border: 1px solid ${({ theme }) => theme.borderBase || '#e5e5e5'}; */
-  background-color: ${({ theme }) =>
-    theme === 'light' ? '#F9F9F9' : '#181818'};
-  border: 1px solid
-    ${({ theme }) => (theme === 'light' ? '#e5e5e5' : '#383838')};
-
+  background-color: ${({ theme }) => theme.backgroundLevel1 || '#FFFFFF'};
+  border: 1px solid ${({ theme }) => theme.borderBase || '#e5e5e5'};
   align-items: center;
   padding: 0 16px;
   gap: 16px;
@@ -36,23 +30,18 @@ const StyledMenu = styled.header<{ theme: 'light' | 'dark' }>`
 interface MenuProps {
   filterValue: string;
   setFilterValue: (value: string) => void;
-  theme: 'light' | 'dark';
-  setTheme: (theme: 'light' | 'dark') => void;
 }
 
-export function Menu({
-  filterValue,
-  setFilterValue,
-  theme,
-  setTheme,
-}: MenuProps) {
+export function Menu({ filterValue, setFilterValue }: MenuProps) {
   return (
-    <StyledMenu theme={theme}>
+    <StyledMenu>
       <div>
         <Logo />
       </div>
+
       <Search filterValue={filterValue} setFilterValue={setFilterValue} />
-      <ThemeSelector theme={theme} setTheme={setTheme} />
+
+      <DarkModeSwitch />
     </StyledMenu>
   );
 }

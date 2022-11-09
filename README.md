@@ -34,6 +34,10 @@
 
 ### Aula 3
 
+- Depois de tudo o que vimos até agora, se baseie no Figma para tentar criar uma nova página e a personalize do seu jeito.
+- Tutorial de como você pode criar páginas no NextJS. (Ok)
+- Grave um vídeo do seu projeto e poste no Twitter, LinkedIn, Instagram e Facebook marcando @aluraonline! (Ok com imagem ao invés do vídeo)
+
 ### Aula 4
 
 ### Aula 5
@@ -49,10 +53,11 @@
 
 ## 🔗 Links úteis ✨
 
-- https://www.figma.com/file/1acrju7CLwHkSh6e7xEk9h/Aluratube?node-id=0%3A1
 - https://unsplash.com/
 - https://techguide.sh/
+- https://github.com/alexpate/awesome-design-systems
 
 ## 🔥 Deployed URL 🔗
 
+- https://www.figma.com/file/1acrju7CLwHkSh6e7xEk9h/Aluratube?node-id=0%3A1
 - https://alura-aluratube-rodolfohok.vercel.app/

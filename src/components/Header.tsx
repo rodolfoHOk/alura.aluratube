@@ -4,6 +4,7 @@ import { Banner } from './Banner';
 
 const StyledHeader = styled.div`
   margin-top: 64px;
+  background-color: ${({ theme }) => theme.backgroundLevel1};
 
   .user-info {
     display: flex;

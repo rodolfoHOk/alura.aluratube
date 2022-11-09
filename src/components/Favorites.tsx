@@ -48,13 +48,15 @@ export function Favorites({ favorites }: FavoritesProps) {
   return (
     <StyledFavorites>
       <h2>AluraTubes Favoritos</h2>
+
       <section>
         {favorites.map((favorite) => (
-          <div className="github-person">
+          <div key={favorite.username} className="github-person">
             <img
               src={`https://github.com/${favorite.username}.png`}
               alt="github user avatar"
             />
+
             <a href={`https://github.com/${favorite.username}`}>
               @{favorite.username}
             </a>
