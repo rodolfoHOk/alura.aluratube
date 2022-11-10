@@ -40,6 +40,11 @@
 
 ### Aula 4
 
+- No momento do cadastro, pegar o ID do vídeo separadamente da URL com uma função e ter a URL da imagem de Thumbnail do YouTube
+- Adicionar o preview dessa imagem do desafio anterior na tela.
+- Adicionar validações de formulário. Campo está required? / Campo tem ao menos X caracteres? Exibir mensagem com o erro que aconteceu.
+- Se inspirar na API do Formik para adicionar validações no nosso Custom Hook.
+
 ### Aula 5
 
 ## ➕ O que fiz além ✨

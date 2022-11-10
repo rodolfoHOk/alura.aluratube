@@ -12,7 +12,7 @@ interface ColorModeProviderProps {
 }
 
 export function ColorModeProvider({ children }: ColorModeProviderProps) {
-  const [mode, setMode] = useState<'light' | 'dark'>('light');
+  const [mode, setMode] = useState<'light' | 'dark'>('dark');
 
   function toggleMode() {
     if (mode === 'light') setMode('dark');

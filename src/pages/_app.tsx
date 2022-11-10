@@ -2,6 +2,7 @@ import { AppProps } from 'next/app';
 import { useContext } from 'react';
 import { DefaultTheme, ThemeProvider } from 'styled-components';
 import { CSSReset } from '../components/CSSReset';
+import { RegisterVideo } from '../components/RegisterVideo';
 import {
   ColorModeContext,
   ColorModeProvider,
@@ -36,6 +37,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={theme[mode]}>
       <CSSReset />
       <Component {...pageProps} />
+      <RegisterVideo />
     </ThemeProvider>
   );
 }
