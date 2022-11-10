@@ -51,6 +51,7 @@
 
 - Adicionei Typescript
 - Separei componentes em arquivos
+- Adicionei um spinner no botão de cadastro de vídeo
 
 ## 🖼️ Imagens do projeto 👀
 

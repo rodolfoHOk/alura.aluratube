@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { UseFormErrors, useForm } from '../../hooks/useForm';
+import { Spinner } from '../Spinner';
 import { StyledRegisterVideo } from './styles';
 
 interface FormValues {
   title: string;
   url: string;
+  thumb: string;
 }
 
 export function RegisterVideo() {
@@ -14,9 +16,10 @@ export function RegisterVideo() {
     initialValues: {
       title: '',
       url: '',
+      thumb: '',
     },
     validate: (values) => {
-      let errors: UseFormErrors<FormValues> = { title: '', url: '' };
+      let errors: UseFormErrors<FormValues> = { title: '', url: '', thumb: '' };
       if (values.title.trim() === '') {
         errors.title = 'título é obrigatório';
       } else if (values.title.length < 3) {
@@ -55,6 +58,8 @@ export function RegisterVideo() {
               x
             </button>
 
+            <h2>Adicionar novo vídeo</h2>
+
             <input
               type="text"
               name="title"
@@ -77,6 +82,7 @@ export function RegisterVideo() {
 
             <button type="submit" disabled={registerForm.isSubmitting}>
               Cadastrar
+              {registerForm.isSubmitting && <Spinner />}
             </button>
           </div>
         </form>

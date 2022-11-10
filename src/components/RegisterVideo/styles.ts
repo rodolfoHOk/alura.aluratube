@@ -29,6 +29,12 @@ export const StyledRegisterVideo = styled.div`
   }
 
   button[type='submit'] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: bold;
     background-color: red;
     padding: 8px 16px;
     border: none;
@@ -46,6 +52,13 @@ export const StyledRegisterVideo = styled.div`
       background-color: rgba(255, 0, 0, 0.1);
       cursor: default;
     }
+  }
+
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+    align-self: center;
+    margin-bottom: 16px;
   }
 
   form {
