@@ -35,6 +35,17 @@ export const StyledRegisterVideo = styled.div`
     border-radius: 2px;
     cursor: pointer;
     color: inherit;
+
+    :hover,
+    :focus {
+      opacity: unset;
+      background-color: rgba(255, 0, 0, 0.7);
+    }
+
+    :disabled {
+      background-color: rgba(255, 0, 0, 0.1);
+      cursor: default;
+    }
   }
 
   form {
@@ -73,5 +84,13 @@ export const StyledRegisterVideo = styled.div`
     background-color: #f9f9f9;
     color: ${({ theme }) => theme.textColorBase};
     background-color: ${({ theme }) => theme.backgroundBase};
+  }
+
+  span {
+    transform: translateY(-10px);
+    padding-left: 4px;
+    margin-bottom: 2px;
+    font-size: 14px;
+    color: red;
   }
 `;

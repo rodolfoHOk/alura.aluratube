@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useForm } from '../../hooks/useForm';
+import { UseFormErrors, useForm } from '../../hooks/useForm';
 import { StyledRegisterVideo } from './styles';
 
 interface FormValues {
@@ -10,12 +10,32 @@ interface FormValues {
 export function RegisterVideo() {
   const [show, setShow] = useState(false);
 
-  const initialValues: FormValues = {
-    title: '',
-    url: '',
-  };
   const registerForm = useForm<FormValues>({
-    initialValues,
+    initialValues: {
+      title: '',
+      url: '',
+    },
+    validate: (values) => {
+      let errors: UseFormErrors<FormValues> = { title: '', url: '' };
+      if (values.title.trim() === '') {
+        errors.title = 'título é obrigatório';
+      } else if (values.title.length < 3) {
+        errors.title = 'título deve conter ao menos 3 caracteres';
+      }
+      if (values.url.trim() === '') {
+        errors.url = 'url é obrigatória';
+      } else if (values.url.length < 6) {
+        errors.url = 'url deve conter ao menos 6 caracteres';
+      }
+      return errors;
+    },
+    onSubmit: (values, clear, setIsSubmitting) => {
+      setTimeout(() => {
+        console.log(values);
+        clear();
+        setIsSubmitting(false);
+      }, 1000);
+    },
   });
 
   return (
@@ -25,14 +45,7 @@ export function RegisterVideo() {
       </button>
 
       {show && (
-        <form
-          onSubmit={(event) => {
-            event.preventDefault();
-            console.log(registerForm.values);
-            registerForm.clear();
-            setShow(false);
-          }}
-        >
+        <form onSubmit={registerForm.handleSubmit}>
           <div>
             <button
               type="button"
@@ -49,6 +62,9 @@ export function RegisterVideo() {
               value={registerForm.values.title}
               onChange={registerForm.handleChange}
             />
+            {registerForm.errors?.title && (
+              <span>{registerForm.errors.title}</span>
+            )}
 
             <input
               type="text"
@@ -57,8 +73,11 @@ export function RegisterVideo() {
               value={registerForm.values.url}
               onChange={registerForm.handleChange}
             />
+            {registerForm.errors?.url && <span>{registerForm.errors.url}</span>}
 
-            <button type="submit">Cadastrar</button>
+            <button type="submit" disabled={registerForm.isSubmitting}>
+              Cadastrar
+            </button>
           </div>
         </form>
       )}
