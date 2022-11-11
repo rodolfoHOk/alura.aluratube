@@ -1,25 +1,35 @@
 import { useEffect, useState } from 'react';
-import { Video } from '../../@types/AppConfig';
 import { UseFormErrors, useForm } from '../../hooks/useForm';
+import { CreateVideoDTO, PlaylistModel } from '../../pages/api/videos';
 import { Spinner } from '../Spinner';
 import { StyledRegisterVideo } from './styles';
 
 interface FormValues {
+  playlist_id: number;
   title: string;
   url: string;
 }
 
 export function RegisterVideo() {
   const [show, setShow] = useState(false);
+  const [playlists, setPlaylists] = useState<PlaylistModel[]>([]);
   const [thumb, setThumb] = useState('');
 
   const registerForm = useForm<FormValues>({
     initialValues: {
+      playlist_id: 0,
       title: '',
       url: '',
     },
     validate: (values) => {
-      let errors: UseFormErrors<FormValues> = { title: '', url: '' };
+      let errors: UseFormErrors<FormValues> = {
+        playlist_id: '',
+        title: '',
+        url: '',
+      };
+      if (values.playlist_id === 0) {
+        errors.playlist_id = 'selecione uma playlist';
+      }
       if (values.title.trim() === '') {
         errors.title = 'título é obrigatório';
       } else if (values.title.length < 3) {
@@ -33,17 +43,37 @@ export function RegisterVideo() {
       return errors;
     },
     onSubmit: (values, clear, setIsSubmitting) => {
-      setTimeout(() => {
-        const videoDTO: Video = {
-          ...values,
-          thumb,
-        };
-        console.log(videoDTO);
-        clear();
-        setIsSubmitting(false);
-      }, 1000);
+      const videoDTO: CreateVideoDTO = {
+        ...values,
+        thumb,
+        playlist_id: Number(values.playlist_id),
+      };
+
+      fetch('/api/videos', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(videoDTO),
+      });
+
+      clear();
+      setIsSubmitting(false);
+      setShow(false);
     },
   });
+
+  async function fetchPlaylists() {
+    await fetch('/api/playlists')
+      .then((response) => response.json())
+      .then((data) => {
+        setPlaylists(data);
+      });
+  }
+
+  useEffect(() => {
+    fetchPlaylists();
+  }, []);
 
   useEffect(() => {
     const url = registerForm.values.url;
@@ -73,6 +103,25 @@ export function RegisterVideo() {
             </button>
 
             <h2>Adicionar novo vídeo</h2>
+
+            <select
+              name="playlist_id"
+              id="playlist_id"
+              defaultValue={0}
+              onChange={registerForm.handleChange}
+            >
+              <option value={0} disabled selected>
+                Selecione uma playlist...
+              </option>
+              {playlists.map((playlist) => (
+                <option key={playlist.id} value={playlist.id}>
+                  {playlist.name}
+                </option>
+              ))}
+            </select>
+            {registerForm.errors?.playlist_id && (
+              <span>{registerForm.errors.playlist_id}</span>
+            )}
 
             <input
               type="text"

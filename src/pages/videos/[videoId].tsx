@@ -38,16 +38,14 @@ export default function VideoPage() {
   const [video, setVideo] = useState<Video | null>(null);
 
   useEffect(() => {
-    const playlistsNames = Object.keys(config.playlists);
-    let videos: Video[] = [];
-    playlistsNames.forEach((playlistsName) =>
-      videos.push(...config.playlists[playlistsName])
-    );
-    const video = videos.filter((video) =>
-      video.url.includes(videoId as string)
-    )[0];
-    setVideo(video);
+    fetch(`/api/videos/${videoId}`)
+      .then((response) => response.json())
+      .then((data) => setVideo(data));
   }, [videoId]);
+
+  function extractGoogleVideoId(url: string): string {
+    return url.split('/watch?v=')[1];
+  }
 
   return (
     <StyledVideoPage>
@@ -55,18 +53,22 @@ export default function VideoPage() {
 
       <Header showBanner={false} config={config} />
 
-      <div className="video">
-        <h2>{video?.title}</h2>
+      {video && (
+        <div className="video">
+          <h2>{video.title}</h2>
 
-        <iframe
-          width="960"
-          height="540"
-          src={`https://www.youtube.com/embed/${videoId}`}
-          title="YouTube video player"
-          frameBorder="0"
-          allowFullScreen
-        />
-      </div>
+          <iframe
+            width="960"
+            height="540"
+            src={`https://www.youtube.com/embed/${extractGoogleVideoId(
+              video.url
+            )}`}
+            title="YouTube video player"
+            frameBorder="0"
+            allowFullScreen
+          />
+        </div>
+      )}
     </StyledVideoPage>
   );
 }

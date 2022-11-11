@@ -8,10 +8,11 @@
 - Next Js
 - React Js
 - Styled Components
+- Supabase
 
 ### 📚 Bibliotecas adicionais 🗃️
 
--
+- @supabase/supabase-js
 
 ## 📃 Guia 📖
 
@@ -47,6 +48,8 @@
 
 ### Aula 5
 
+- Se cadastrar no [7DaysOfCode](https://7daysofcode.io/) (Ok)
+
 ## ➕ O que fiz além ✨
 
 - Todos os desafios
@@ -55,6 +58,10 @@
 - Adicionei um spinner no botão de cadastro de vídeo
 - Adicionei transições suaves de cores
 - Adicionei animação de entrada do formulário de cadastro de vídeo
+- Criei tabela de playlist e adicionei a playlist como foreign key da tabela de video
+- Criei selector de playlist no formulário
+- Usei a API do Next js para não expor a chave do Supabase
+- Criei o fetch de playlists
 
 ## 🖼️ Imagens do projeto 👀
 

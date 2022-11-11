@@ -3,6 +3,7 @@ import {
   Dispatch,
   FormEvent,
   SetStateAction,
+  SyntheticEvent,
   useEffect,
   useState,
 } from 'react';
@@ -30,7 +31,9 @@ export function useForm<T>({
   const [errors, setErrors] = useState<UseFormErrors<T> | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    event: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const fieldName = event.target.name;
     setValues({ ...values, [fieldName]: event.target.value });
   };

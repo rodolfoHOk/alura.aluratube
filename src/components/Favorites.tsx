@@ -68,7 +68,10 @@ export function Favorites({ favorites }: FavoritesProps) {
       <section>
         <div className="github-person">
           {favorites.map((favorite) => (
-            <a href={`https://github.com/${favorite.username}`}>
+            <a
+              key={favorite.username}
+              href={`https://github.com/${favorite.username}`}
+            >
               <img
                 src={`https://github.com/${favorite.username}.png`}
                 alt="github user avatar"

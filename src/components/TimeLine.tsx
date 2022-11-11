@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
-import { PlayLists, Video } from '../@types/AppConfig';
+import { PlayLists } from '../@types/AppConfig';
+import { VideoModel } from '../pages/api/videos';
 
 const StyledTimeline = styled.div`
   flex: 1;
@@ -25,16 +26,19 @@ const StyledTimeline = styled.div`
 
   section {
     width: 100%;
+    margin-top: 16px;
     padding: 0;
     overflow: hidden;
 
     div {
       width: calc(100vw - 16px * 4);
+      height: 224px;
       display: grid;
       grid-gap: 16px;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       grid-auto-flow: column;
       grid-auto-columns: minmax(200px, 1fr);
+      align-items: center;
       overflow-x: scroll;
       scroll-snap-type: x mandatory;
 
@@ -62,7 +66,7 @@ const StyledTimeline = styled.div`
 `;
 
 interface TimeLineProps {
-  playlists: PlayLists;
+  playlists: PlayLists | Map<string, VideoModel[]>;
   filterValue: string;
 }
 
@@ -70,9 +74,8 @@ export function TimeLine({ playlists, filterValue }: TimeLineProps) {
   const router = useRouter();
   const playlistsNames = Object.keys(playlists);
 
-  function handleVideoClick(video: Video) {
-    const [_, videoId] = video.url.split('/watch?v=');
-    router.push(`/videos/${videoId}`);
+  function handleVideoClick(video: VideoModel) {
+    router.push(`/videos/${video.id}`);
   }
 
   return (
