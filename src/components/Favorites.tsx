@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import { GithubPerson } from '../@types/AppConfig';
 
 const StyledFavorites = styled.div`
-  display: flex;
-  flex-direction: column;
+  width: 100%;
   padding: 16px;
   margin-bottom: 8px;
+  overflow: hidden;
 
   h2 {
     font-size: 16px;
@@ -14,28 +14,44 @@ const StyledFavorites = styled.div`
   }
 
   section {
-    display: flex;
-    align-items: center;
-    gap: 16px;
     width: 100%;
     overflow: hidden;
-  }
 
-  .github-person {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
+    div {
+      width: calc(100vw - 16px * 4);
+      height: 130px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      overflow-x: scroll;
 
-    img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-    }
+      a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
 
-    a {
-      font-size: 14px;
-      text-decoration: none;
+        :hover,
+        :focus {
+          opacity: unset;
+          color: red;
+          cursor: pointer;
+          transform: scale(1.1);
+          transition: all ease-in-out 0.2s;
+        }
+
+        img {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+        }
+
+        span {
+          display: block;
+          font-size: 14px;
+          text-decoration: none;
+        }
+      }
     }
   }
 `;
@@ -50,18 +66,18 @@ export function Favorites({ favorites }: FavoritesProps) {
       <h2>AluraTubes Favoritos</h2>
 
       <section>
-        {favorites.map((favorite) => (
-          <div key={favorite.username} className="github-person">
-            <img
-              src={`https://github.com/${favorite.username}.png`}
-              alt="github user avatar"
-            />
-
+        <div className="github-person">
+          {favorites.map((favorite) => (
             <a href={`https://github.com/${favorite.username}`}>
-              @{favorite.username}
+              <img
+                src={`https://github.com/${favorite.username}.png`}
+                alt="github user avatar"
+              />
+
+              <span>@{favorite.username}</span>
             </a>
-          </div>
-        ))}
+          ))}
+        </div>
       </section>
     </StyledFavorites>
   );

@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { DarkModeSwitch } from './components/DarkModeSwitch';
 import { Logo } from './components/Logo';
@@ -15,6 +16,14 @@ const StyledMenu = styled.header`
   gap: 16px;
   position: fixed;
   width: 100%;
+
+  div {
+    :hover,
+    :focus {
+      cursor: pointer;
+    }
+  }
+
   .logo {
     width: 100%;
     max-width: 80px;
@@ -28,18 +37,23 @@ const StyledMenu = styled.header`
 `;
 
 interface MenuProps {
-  filterValue: string;
-  setFilterValue: (value: string) => void;
+  showSearch: boolean;
+  filterValue?: string;
+  setFilterValue?: (value: string) => void;
 }
 
-export function Menu({ filterValue, setFilterValue }: MenuProps) {
+export function Menu({ showSearch, filterValue, setFilterValue }: MenuProps) {
+  const router = useRouter();
+
   return (
     <StyledMenu>
-      <div>
+      <div onClick={() => router.push('/')}>
         <Logo />
       </div>
 
-      <Search filterValue={filterValue} setFilterValue={setFilterValue} />
+      {showSearch && (
+        <Search filterValue={filterValue} setFilterValue={setFilterValue} />
+      )}
 
       <DarkModeSwitch />
     </StyledMenu>

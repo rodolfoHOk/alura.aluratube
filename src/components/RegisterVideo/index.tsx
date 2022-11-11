@@ -1,13 +1,8 @@
 import { useEffect, useState } from 'react';
+import { Video } from '../../@types/AppConfig';
 import { UseFormErrors, useForm } from '../../hooks/useForm';
 import { Spinner } from '../Spinner';
 import { StyledRegisterVideo } from './styles';
-
-interface VideoDTO {
-  title: string;
-  url: string;
-  thumb: string;
-}
 
 interface FormValues {
   title: string;
@@ -39,7 +34,7 @@ export function RegisterVideo() {
     },
     onSubmit: (values, clear, setIsSubmitting) => {
       setTimeout(() => {
-        const videoDTO: VideoDTO = {
+        const videoDTO: Video = {
           ...values,
           thumb,
         };

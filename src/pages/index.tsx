@@ -24,9 +24,13 @@ export default function HomePage() {
 
   return (
     <StyledHomePage>
-      <Menu filterValue={filterValue} setFilterValue={setFilterValue} />
+      <Menu
+        showSearch
+        filterValue={filterValue}
+        setFilterValue={setFilterValue}
+      />
 
-      <Header config={config} />
+      <Header config={config} showBanner />
 
       <TimeLine filterValue={filterValue} playlists={config.playlists} />
 

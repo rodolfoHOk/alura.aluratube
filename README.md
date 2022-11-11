@@ -34,7 +34,7 @@
 
 ### Aula 3
 
-- Depois de tudo o que vimos até agora, se baseie no Figma para tentar criar uma nova página e a personalize do seu jeito.
+- Depois de tudo o que vimos até agora, se baseie no Figma para tentar criar uma nova página e a personalize do seu jeito. (Ok)
 - Tutorial de como você pode criar páginas no NextJS. (Ok)
 - Grave um vídeo do seu projeto e poste no Twitter, LinkedIn, Instagram e Facebook marcando @aluraonline! (Ok com imagem ao invés do vídeo)
 
