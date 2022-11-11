@@ -106,4 +106,9 @@ export const StyledRegisterVideo = styled.div`
     font-size: 14px;
     color: red;
   }
+
+  img {
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
 `;

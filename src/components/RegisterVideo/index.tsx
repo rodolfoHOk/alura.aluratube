@@ -1,25 +1,30 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { UseFormErrors, useForm } from '../../hooks/useForm';
 import { Spinner } from '../Spinner';
 import { StyledRegisterVideo } from './styles';
 
-interface FormValues {
+interface VideoDTO {
   title: string;
   url: string;
   thumb: string;
 }
 
+interface FormValues {
+  title: string;
+  url: string;
+}
+
 export function RegisterVideo() {
   const [show, setShow] = useState(false);
+  const [thumb, setThumb] = useState('');
 
   const registerForm = useForm<FormValues>({
     initialValues: {
       title: '',
       url: '',
-      thumb: '',
     },
     validate: (values) => {
-      let errors: UseFormErrors<FormValues> = { title: '', url: '', thumb: '' };
+      let errors: UseFormErrors<FormValues> = { title: '', url: '' };
       if (values.title.trim() === '') {
         errors.title = 'título é obrigatório';
       } else if (values.title.length < 3) {
@@ -34,12 +39,26 @@ export function RegisterVideo() {
     },
     onSubmit: (values, clear, setIsSubmitting) => {
       setTimeout(() => {
-        console.log(values);
+        const videoDTO: VideoDTO = {
+          ...values,
+          thumb,
+        };
+        console.log(videoDTO);
         clear();
         setIsSubmitting(false);
       }, 1000);
     },
   });
+
+  useEffect(() => {
+    const url = registerForm.values.url;
+    if (url.includes('youtube.com')) {
+      const [_, videoId] = url.split('/watch?v=');
+      setThumb(`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`);
+    } else {
+      setThumb('');
+    }
+  }, [registerForm.values.url]);
 
   return (
     <StyledRegisterVideo>
@@ -79,6 +98,8 @@ export function RegisterVideo() {
               onChange={registerForm.handleChange}
             />
             {registerForm.errors?.url && <span>{registerForm.errors.url}</span>}
+
+            {thumb && <img src={thumb} alt="video image preview" />}
 
             <button type="submit" disabled={registerForm.isSubmitting}>
               Cadastrar
