@@ -12,6 +12,8 @@ export const CSSReset = createGlobalStyle`
     font-family: sans-serif;
     background-color: ${({ theme }) => theme.backgroundBase};
     color: ${({ theme }) => theme.textColorBase};
+    transition: color ease-in-out 0.2s;
+    transition: background-color ease-in-out 0.2s;
   }
 
   /* NextJS */

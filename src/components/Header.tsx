@@ -5,6 +5,8 @@ import { Banner } from './Banner';
 const StyledHeader = styled.div`
   margin-top: 56px;
   background-color: ${({ theme }) => theme.backgroundLevel1};
+  transition: color ease-in-out 0.2s;
+  transition: background-color ease-in-out 0.2s;
 
   .user-info {
     display: flex;

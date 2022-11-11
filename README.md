@@ -49,9 +49,12 @@
 
 ## ➕ O que fiz além ✨
 
+- Todos os desafios
 - Adicionei Typescript
 - Separei componentes em arquivos
 - Adicionei um spinner no botão de cadastro de vídeo
+- Adicionei transições suaves de cores
+- Adicionei animação de entrada do formulário de cadastro de vídeo
 
 ## 🖼️ Imagens do projeto 👀
 

@@ -16,6 +16,8 @@ const StyledMenu = styled.header`
   gap: 16px;
   position: fixed;
   width: 100%;
+  transition: color ease-in-out 0.2s;
+  transition: background-color ease-in-out 0.2s;
 
   div {
     :hover,

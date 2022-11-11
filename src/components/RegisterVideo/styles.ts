@@ -1,4 +1,26 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const backIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+`;
+
+const inForm = keyframes`
+  0% {
+    transform: translate(200%, 100%);
+    opacity: 50%;
+  }
+
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+`;
 
 export const StyledRegisterVideo = styled.div`
   .add-video {
@@ -14,6 +36,12 @@ export const StyledRegisterVideo = styled.div`
     border-radius: 50%;
     z-index: 99;
     cursor: pointer;
+
+    :hover,
+    :focus {
+      opacity: 75%;
+      transition: opacity ease-in-out 0.2s;
+    }
   }
 
   .close-modal {
@@ -74,6 +102,8 @@ export const StyledRegisterVideo = styled.div`
     display: flex;
     justify-content: center;
 
+    animation: ${backIn} ease-in-out 0.3s;
+
     & > div {
       flex: 1;
       border-radius: 8px;
@@ -84,6 +114,8 @@ export const StyledRegisterVideo = styled.div`
       position: relative;
       padding: 16px;
       padding-top: 40px;
+
+      animation: ${inForm} ease-in-out 0.3s;
     }
   }
 
