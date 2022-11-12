@@ -15,10 +15,6 @@
 - @supabase/supabase-js
 - axios
 
-## 📃 Guia 📖
-
-- Criação automática do .gitignore: npx gitignore node
-
 ## ➕ Desafios ✨
 
 ### Aula 1
@@ -71,7 +67,33 @@
 
 ## 🖼️ Imagens do projeto 👀
 
--
+<img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/aluratube-01.png" alt="AluraTube Imagem 01" width="450"/>
+
+<img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/aluratube-02.png" alt="AluraTube Imagem 02" width="450"/>
+
+<img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/aluratube-03.png" alt="AluraTube Imagem 03" width="450"/>
+
+<img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/aluratube-04.png" alt="AluraTube Imagem 04" width="450"/>
+
+<img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/aluratube-05.png" alt="AluraTube Imagem 05" width="450"/>
+
+<img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/aluratube-06.png" alt="AluraTube Imagem 06" width="450"/>
+
+<img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/aluratube-07.png" alt="AluraTube Imagem 07" width="450"/>
+
+<img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/aluratube-08.png" alt="AluraTube Imagem 08" width="450"/>
+
+<img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/aluratube-09.png" alt="AluraTube Imagem 09" width="450"/>
+
+<img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/aluratube-10.png" alt="AluraTube Imagem 10" width="450"/>
+
+<img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/aluratube-11.png" alt="AluraTube Imagem 11" width="450"/>
+
+<img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/aluratube-12.png" alt="AluraTube Imagem 12" width="450"/>
+
+## 📃 Guia 📖
+
+- Criação automática do .gitignore: npx gitignore node
 
 ## 🔗 Links úteis ✨
 
