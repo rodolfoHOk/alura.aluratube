@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
-import { GithubPerson } from '../@types/AppConfig';
 import { FavoriteModel } from '../model/favorite';
 
 const StyledFavorites = styled.div`
@@ -23,8 +22,9 @@ const StyledFavorites = styled.div`
       width: calc(100vw - 16px * 4);
       height: 130px;
       display: flex;
-      gap: 16px;
       align-items: center;
+      gap: 16px;
+      padding: 0 8px;
       overflow-x: scroll;
 
       a {
@@ -70,7 +70,7 @@ export function Favorites({ favorites }: FavoritesProps) {
       <h2>AluraTubes Favoritos</h2>
 
       <section>
-        <div className="github-person">
+        <div>
           {favorites.map((favorite) => (
             <a
               key={favorite.username}
