@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
-import { UseFormErrors, useForm } from '../../hooks/useForm';
-import { CreateVideoDTO, PlaylistModel } from '../../pages/api/videos';
-import { Spinner } from '../Spinner';
 import { StyledRegisterVideo } from './styles';
+import { Spinner } from '../Spinner';
+import { UseFormErrors, useForm } from '../../hooks/useForm';
+import { PlaylistModel } from '../../model/playlist';
+import { CreateVideoDTO } from '../../model/dto/createVideo';
+import { VideoService } from '../../services/VideoService';
+import { PlaylistService } from '../../services/PlaylistService';
 
 interface FormValues {
   playlist_id: number;
@@ -49,13 +52,7 @@ export function RegisterVideo() {
         playlist_id: Number(values.playlist_id),
       };
 
-      fetch('/api/videos', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(videoDTO),
-      });
+      VideoService.createVideo(videoDTO);
 
       clear();
       setIsSubmitting(false);
@@ -63,16 +60,8 @@ export function RegisterVideo() {
     },
   });
 
-  async function fetchPlaylists() {
-    await fetch('/api/playlists')
-      .then((response) => response.json())
-      .then((data) => {
-        setPlaylists(data);
-      });
-  }
-
   useEffect(() => {
-    fetchPlaylists();
+    PlaylistService.getAllPlaylists().then((data) => setPlaylists(data));
   }, []);
 
   useEffect(() => {

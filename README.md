@@ -62,6 +62,9 @@
 - Criei selector de playlist no formulário
 - Usei a API do Next js para não expor a chave do Supabase
 - Criei o fetch de playlists
+- Mudei a camada de serviços de função com retorno de funções para classe com métodos estáticos
+- Adicionei camada de modelos para compartilhar entre os serviços e o Next API
+- Usei o axios para requisições ao invés do fetch API da javascript pela facilidade com o uso do Typescript
 
 ## 🖼️ Imagens do projeto 👀
 
@@ -77,3 +80,8 @@
 
 - https://www.figma.com/file/1acrju7CLwHkSh6e7xEk9h/Aluratube?node-id=0%3A1
 - https://alura-aluratube-rodolfohok.vercel.app/
+
+##### ideias
+
+- terminar melhorar camada de service
+- pensar em usar https://api.github.com/users/rodolfoHOk no AluraTubes Favoritos

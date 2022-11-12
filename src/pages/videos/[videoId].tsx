@@ -1,10 +1,12 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { AppConfig } from '../../@types/AppConfig';
 import appConfig from '../../../config.json';
-import { AppConfig, Video } from '../../@types/AppConfig';
 import { Header } from '../../components/Header';
 import { Menu } from '../../components/Menu';
+import { VideoModel } from '../../model/video';
+import { VideoService } from '../../services/VideoService';
 
 const config = appConfig as AppConfig;
 
@@ -35,12 +37,10 @@ const StyledVideoPage = styled.div`
 
 export default function VideoPage() {
   const { videoId } = useRouter().query;
-  const [video, setVideo] = useState<Video | null>(null);
+  const [video, setVideo] = useState<VideoModel | null>(null);
 
   useEffect(() => {
-    fetch(`/api/videos/${videoId}`)
-      .then((response) => response.json())
-      .then((data) => setVideo(data));
+    VideoService.getVideoById(Number(videoId)).then((data) => setVideo(data));
   }, [videoId]);
 
   function extractGoogleVideoId(url: string): string {

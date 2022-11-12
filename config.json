@@ -6,99 +6,19 @@
   "playlists": {
     "jogos": [
       {
-        "title": "Final Fantasy: Brave Exvius",
-        "url": "https://www.youtube.com/watch?v=Lk5bTYE2jHE",
-        "thumb": "https://img.youtube.com/vi/Lk5bTYE2jHE/hqdefault.jpg"
-      },
-      {
-        "title": "The Complete Soundtrack of Chrono Trigger (SNES)",
-        "url": "https://www.youtube.com/watch?v=koPZCRg9YiI",
-        "thumb": "https://img.youtube.com/vi/koPZCRg9YiI/hqdefault.jpg"
-      },
-      {
-        "title": "Chrono Cross REMASTER (2022) The Radical Dreamers Edition | FULL GAME",
-        "url": "https://www.youtube.com/watch?v=HnWo7eIbTWg",
-        "thumb": "https://img.youtube.com/vi/HnWo7eIbTWg/hqdefault.jpg"
-      },
-      {
-        "title": "Chrono Trigger • Beautiful & Relaxing Piano Covers",
-        "url": "https://www.youtube.com/watch?v=cFK8fhTsViU",
-        "thumb": "https://img.youtube.com/vi/cFK8fhTsViU/hqdefault.jpg"
-      },
-      {
-        "title": "Chrono Cross & Chrono Trigger Guitar Live Set",
-        "url": "https://www.youtube.com/watch?v=WSyk1NlSLfE",
-        "thumb": "https://img.youtube.com/vi/WSyk1NlSLfE/hqdefault.jpg"
-      },
-      {
-        "title": "Final Fantasy 7 Remake - Official Trailer",
-        "url": "https://www.youtube.com/watch?v=sz9QWTcbXYE",
-        "thumb": "https://img.youtube.com/vi/sz9QWTcbXYE/hqdefault.jpg"
-      },
-      {
-        "title": "Final Fantasy VII Rebirth Trailer",
-        "url": "https://www.youtube.com/watch?v=844qC2IjZGc",
-        "thumb": "https://img.youtube.com/vi/844qC2IjZGc/hqdefault.jpg"
-      },
-      {
-        "title": "Path of Exile: Lake of Kalandra Official Trailer",
-        "url": "https://www.youtube.com/watch?v=jA0OamQ63Ds",
-        "thumb": "https://img.youtube.com/vi/jA0OamQ63Ds/hqdefault.jpg"
+        "title": "",
+        "url": "",
+        "thumb": ""
       }
     ],
     "front-end": [
       {
-        "title": "Jogo com JavaScript #01: Criando um Flappy Bird do ZERO!!!",
-        "url": "https://youtube.com/watch?v=jOAU81jdi-c",
-        "thumb": "https://img.youtube.com/vi/jOAU81jdi-c/hqdefault.jpg"
-      },
-      {
-        "title": "LANDING PAGE COM HTML e CSS!",
-        "url": "https://www.youtube.com/watch?v=llF6vD-RljE",
-        "thumb": "https://img.youtube.com/vi/llF6vD-RljE/hqdefault.jpg"
-      },
-      {
-        "title": "A Primeira Aula de Flutter Que Todo Mundo Deveria Ter",
-        "url": "https://www.youtube.com/watch?v=J4BVaXkwmM8",
-        "thumb": "https://img.youtube.com/vi/J4BVaXkwmM8/hqdefault.jpg"
-      },
-      {
-        "title": "O QUE SÃO FRAMEWORKS E BIBLIOTECAS? QUAIS AS DIFERENÇAS?",
-        "url": "https://www.youtube.com/watch?v=dp0zB4n3MUs",
-        "thumb": "https://img.youtube.com/vi/dp0zB4n3MUs/hqdefault.jpg"
-      },
-      {
-        "title": "Angular (O Vídeo que Você Precisava para Começar no Framework) // Dicionário do Programador",
-        "url": "https://www.youtube.com/watch?v=Yf0rC7dERjg",
-        "thumb": "https://img.youtube.com/vi/Yf0rC7dERjg/hqdefault.jpg"
-      },
-      {
-        "title": "Como Foi Programado um App Que Faz Mágica",
-        "url": "https://www.youtube.com/watch?v=I36seuWUe5s",
-        "thumb": "https://img.youtube.com/vi/I36seuWUe5s/hqdefault.jpg"
-      },
-      {
-        "title": "O que todo iniciante em Front End deveria aprender | Como manipular arrays e objetos em JavaScript",
-        "url": "https://www.youtube.com/watch?v=yS7AcF-xRUg",
-        "thumb": "https://img.youtube.com/vi/yS7AcF-xRUg/hqdefault.jpg"
-      },
-      {
-        "title": "5 Erros Históricos do CSS",
-        "url": "https://www.youtube.com/watch?v=HNjkqONzGS0",
-        "thumb": "https://img.youtube.com/vi/HNjkqONzGS0/hqdefault.jpg"
-      },
-      {
-        "title": "Deploy de Front End ATUALIZADO! | O que eu uso para hospedagem de Front End",
-        "url": "https://www.youtube.com/watch?v=d9c0r-J6CdM",
-        "thumb": "https://img.youtube.com/vi/d9c0r-J6CdM/hqdefault.jpg"
+        "title": "",
+        "url": "",
+        "thumb": ""
       }
     ],
     "back-end": [
-      {
-        "title": "Node JS: Construindo CRUDs com file system focando em serialização e JSON",
-        "url": "https://www.youtube.com/watch?v=dvd3pNYh7So",
-        "thumb": "https://img.youtube.com/vi/dvd3pNYh7So/hqdefault.jpg"
-      },
       {
         "title": "CRUD Angular + Spring | 29: Atualizar Curso: Salvando o Formulário",
         "url": "https://www.youtube.com/watch?v=8q36rNS5yVo",

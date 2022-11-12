@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+import { ErrorResponseDTO } from '../../../model/dto/errorReponse';
 import { supabase } from '../../../services/lib/supabaseClient';
-import { ErrorResponseModel } from '../videos';
 
 export default async function handler(
   req: NextApiRequest,
@@ -12,7 +12,7 @@ export default async function handler(
       .select('*')
       .order('id');
     if (error) {
-      const errorResponse: ErrorResponseModel = {
+      const errorResponse: ErrorResponseDTO = {
         status: 500,
         type: 'Internal Server Error',
         message: error.details,
@@ -22,7 +22,7 @@ export default async function handler(
       res.status(200).json(data);
     }
   } else {
-    const errorResponse: ErrorResponseModel = {
+    const errorResponse: ErrorResponseDTO = {
       status: 405,
       type: 'Method Not Allowed',
       message: 'Method Not Allowed',

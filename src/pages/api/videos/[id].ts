@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { ErrorResponseModel } from '.';
+import { ErrorResponseDTO } from '../../../model/dto/errorReponse';
 import { supabase } from '../../../services/lib/supabaseClient';
 
 export default async function handler(
@@ -14,7 +14,7 @@ export default async function handler(
       .eq('id', id)
       .single();
     if (error) {
-      const errorResponse: ErrorResponseModel = {
+      const errorResponse: ErrorResponseDTO = {
         status: 404,
         type: 'Not Found',
         message: error.details,
@@ -24,7 +24,7 @@ export default async function handler(
       res.status(200).json(data);
     }
   } else {
-    const errorResponse: ErrorResponseModel = {
+    const errorResponse: ErrorResponseDTO = {
       status: 405,
       type: 'Method Not Allowed',
       message: 'Method Not Allowed',

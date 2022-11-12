@@ -1,12 +1,15 @@
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import appConfig from '../../config.json';
-import { AppConfig, PlayLists } from '../@types/AppConfig';
+import { AppConfig } from '../@types/AppConfig';
 import { Menu } from '../components/Menu';
 import { Header } from '../components/Header';
 import { TimeLine } from '../components/TimeLine';
-import { useEffect, useState } from 'react';
 import { Favorites } from '../components/Favorites';
-import { PlaylistModel, VideoModel } from './api/videos';
+import { VideoModel } from '../model/video';
+import { PlaylistModel } from '../model/playlist';
+import { VideoService } from '../services/VideoService';
+import { PlaylistService } from '../services/PlaylistService';
 
 const config = appConfig as AppConfig;
 
@@ -28,19 +31,11 @@ export default function HomePage() {
     useState<Map<string, VideoModel[]>>();
 
   useEffect(() => {
-    fetch('/api/playlists')
-      .then((response) => response.json())
-      .then((data) => {
-        setPlaylists(data);
-      });
+    PlaylistService.getAllPlaylists().then((data) => setPlaylists(data));
   }, []);
 
   useEffect(() => {
-    fetch('/api/videos')
-      .then((response) => response.json())
-      .then((data) => {
-        setVideos(data);
-      });
+    VideoService.getAllVideos().then((data) => setVideos(data));
   }, []);
 
   useEffect(() => {

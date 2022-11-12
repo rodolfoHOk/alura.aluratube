@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { PlayLists } from '../@types/AppConfig';
-import { VideoModel } from '../pages/api/videos';
+import { VideoModel } from '../model/video';
 
 const StyledTimeline = styled.div`
   flex: 1;
@@ -32,13 +32,12 @@ const StyledTimeline = styled.div`
 
     div {
       width: calc(100vw - 16px * 4);
-      height: 224px;
+      padding: 12px;
       display: grid;
       grid-gap: 16px;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       grid-auto-flow: column;
       grid-auto-columns: minmax(200px, 1fr);
-      align-items: center;
       overflow-x: scroll;
       scroll-snap-type: x mandatory;
 
