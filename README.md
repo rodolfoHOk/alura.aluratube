@@ -58,13 +58,14 @@
 - Adicionei um spinner no botão de cadastro de vídeo
 - Adicionei transições suaves de cores
 - Adicionei animação de entrada do formulário de cadastro de vídeo
-- Criei tabela de playlist e adicionei a playlist como foreign key da tabela de video
+- Criei tabela de playlist e adicionei o id do playlist como foreign key da tabela de video
 - Criei selector de playlist no formulário
 - Usei a API do Next js para não expor a chave do Supabase
-- Criei o fetch de playlists
+- Adicionei a camada de modelo para compartilhar entre os serviços e a API do Next js
 - Mudei a camada de serviços de função com retorno de funções para classe com métodos estáticos
-- Adicionei camada de modelos para compartilhar entre os serviços e o Next API
-- Usei o axios para requisições ao invés do fetch API da javascript pela facilidade com o uso do Typescript
+- Implementei toda a camada de serviços para consumir a camada da API do Next Js
+- Usei o axios para requisições ao invés do fetch API do Javascript pela facilidade com o uso do Typescript
+- Adicionei tabela favorite no Supabase e consumi a tabela para mostrar nos AluraTubes Favoritos
 
 ## 🖼️ Imagens do projeto 👀
 
@@ -83,5 +84,4 @@
 
 ##### ideias
 
-- terminar melhorar camada de service
 - pensar em usar https://api.github.com/users/rodolfoHOk no AluraTubes Favoritos

@@ -13,8 +13,12 @@ interface FormValues {
   url: string;
 }
 
-export function RegisterVideo() {
-  const [show, setShow] = useState(false);
+interface RegisterVideoProps {
+  show: boolean;
+  setShow: (show: boolean) => void;
+}
+
+export function RegisterVideo({ show, setShow }: RegisterVideoProps) {
   const [playlists, setPlaylists] = useState<PlaylistModel[]>([]);
   const [thumb, setThumb] = useState('');
 
@@ -45,14 +49,14 @@ export function RegisterVideo() {
       }
       return errors;
     },
-    onSubmit: (values, clear, setIsSubmitting) => {
+    onSubmit: async (values, clear, setIsSubmitting) => {
       const videoDTO: CreateVideoDTO = {
         ...values,
         thumb,
         playlist_id: Number(values.playlist_id),
       };
 
-      VideoService.createVideo(videoDTO);
+      await VideoService.createVideo(videoDTO);
 
       clear();
       setIsSubmitting(false);
@@ -99,7 +103,7 @@ export function RegisterVideo() {
               defaultValue={0}
               onChange={registerForm.handleChange}
             >
-              <option value={0} disabled selected>
+              <option value={0} disabled>
                 Selecione uma playlist...
               </option>
               {playlists.map((playlist) => (

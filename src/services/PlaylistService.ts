@@ -1,4 +1,4 @@
-import { PlaylistModel } from '../pages/api/playlists';
+import { PlaylistModel } from '../model/playlist';
 import { apiClient } from './lib/apiClient';
 
 export class PlaylistService {

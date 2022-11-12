@@ -10,6 +10,9 @@ import { VideoModel } from '../model/video';
 import { PlaylistModel } from '../model/playlist';
 import { VideoService } from '../services/VideoService';
 import { PlaylistService } from '../services/PlaylistService';
+import { RegisterVideo } from '../components/RegisterVideo';
+import { FavoriteModel } from '../model/favorite';
+import { FavoriteService } from '../services/FavoriteService';
 
 const config = appConfig as AppConfig;
 
@@ -29,14 +32,18 @@ export default function HomePage() {
   const [videos, setVideos] = useState<VideoModel[]>([]);
   const [hydratedPlaylists, setHydratedPlaylists] =
     useState<Map<string, VideoModel[]>>();
+  const [favorites, setFavorites] = useState<FavoriteModel[]>([]);
+  const [showRegisterForm, setShowRegisterForm] = useState(false);
 
   useEffect(() => {
     PlaylistService.getAllPlaylists().then((data) => setPlaylists(data));
   }, []);
 
   useEffect(() => {
-    VideoService.getAllVideos().then((data) => setVideos(data));
-  }, []);
+    if (showRegisterForm === false) {
+      VideoService.getAllVideos().then((data) => setVideos(data));
+    }
+  }, [showRegisterForm]);
 
   useEffect(() => {
     if (playlists.length && videos.length) {
@@ -54,21 +61,28 @@ export default function HomePage() {
     }
   }, [playlists, videos]);
 
+  useEffect(() => {
+    FavoriteService.getAllFavorites().then((data) => setFavorites(data));
+  }, []);
+
   return (
-    <StyledHomePage>
-      <Menu
-        showSearch
-        filterValue={filterValue}
-        setFilterValue={setFilterValue}
-      />
+    <>
+      <StyledHomePage>
+        <Menu
+          showSearch
+          filterValue={filterValue}
+          setFilterValue={setFilterValue}
+        />
 
-      <Header config={config} showBanner />
+        <Header config={config} showBanner />
 
-      {hydratedPlaylists && (
-        <TimeLine filterValue={filterValue} playlists={hydratedPlaylists} />
-      )}
+        {hydratedPlaylists && (
+          <TimeLine filterValue={filterValue} playlists={hydratedPlaylists} />
+        )}
 
-      <Favorites favorites={config.favorites} />
-    </StyledHomePage>
+        {favorites.length && <Favorites favorites={favorites} />}
+      </StyledHomePage>
+      <RegisterVideo show={showRegisterForm} setShow={setShowRegisterForm} />
+    </>
   );
 }

@@ -37,7 +37,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={theme[mode]}>
       <CSSReset />
       <Component {...pageProps} />
-      <RegisterVideo />
     </ThemeProvider>
   );
 }
