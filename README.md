@@ -91,6 +91,8 @@
 
 <img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/aluratube-12.png" alt="AluraTube Imagem 12" width="450"/>
 
+<img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/aluratube-13.png" alt="AluraTube Imagem 12" width="450"/>
+
 ## 📃 Guia 📖
 
 - Criação automática do .gitignore: npx gitignore node
