@@ -80,7 +80,7 @@ export default function HomePage() {
           <TimeLine filterValue={filterValue} playlists={hydratedPlaylists} />
         )}
 
-        {favorites.length && <Favorites favorites={favorites} />}
+        {favorites.length > 0 && <Favorites favorites={favorites} />}
       </StyledHomePage>
       <RegisterVideo show={showRegisterForm} setShow={setShowRegisterForm} />
     </>

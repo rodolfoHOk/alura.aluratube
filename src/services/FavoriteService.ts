@@ -7,4 +7,10 @@ export class FavoriteService {
       .get<FavoriteModel[]>('/favorites')
       .then((response) => response.data);
   }
+
+  static getFavoriteById(id: number) {
+    return apiClient
+      .get<FavoriteModel>(`/favorites/${id}`)
+      .then((response) => response.data);
+  }
 }

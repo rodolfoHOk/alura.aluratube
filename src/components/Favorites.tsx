@@ -1,5 +1,7 @@
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { GithubPerson } from '../@types/AppConfig';
+import { FavoriteModel } from '../model/favorite';
 
 const StyledFavorites = styled.div`
   width: 100%;
@@ -57,10 +59,12 @@ const StyledFavorites = styled.div`
 `;
 
 interface FavoritesProps {
-  favorites: GithubPerson[];
+  favorites: FavoriteModel[];
 }
 
 export function Favorites({ favorites }: FavoritesProps) {
+  const router = useRouter();
+
   return (
     <StyledFavorites>
       <h2>AluraTubes Favoritos</h2>
@@ -70,7 +74,7 @@ export function Favorites({ favorites }: FavoritesProps) {
           {favorites.map((favorite) => (
             <a
               key={favorite.username}
-              href={`https://github.com/${favorite.username}`}
+              onClick={() => router.push(`/favorites/${favorite.id}`)}
             >
               <img
                 src={`https://github.com/${favorite.username}.png`}

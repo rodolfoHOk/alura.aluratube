@@ -13,6 +13,7 @@
 ### 📚 Bibliotecas adicionais 🗃️
 
 - @supabase/supabase-js
+- axios
 
 ## 📃 Guia 📖
 
@@ -66,6 +67,7 @@
 - Implementei toda a camada de serviços para consumir a camada da API do Next Js
 - Usei o axios para requisições ao invés do fetch API do Javascript pela facilidade com o uso do Typescript
 - Adicionei tabela favorite no Supabase e consumi a tabela para mostrar nos AluraTubes Favoritos
+- Adicionei página de AluraTube favorito que utiliza dados da API do Github
 
 ## 🖼️ Imagens do projeto 👀
 
@@ -81,7 +83,3 @@
 
 - https://www.figma.com/file/1acrju7CLwHkSh6e7xEk9h/Aluratube?node-id=0%3A1
 - https://alura-aluratube-rodolfohok.vercel.app/
-
-##### ideias
-
-- pensar em usar https://api.github.com/users/rodolfoHOk no AluraTubes Favoritos
